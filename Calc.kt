@@ -1,12 +1,11 @@
-   fun main(args: Array) {
-       val (operation, num1, num2) = parseArguments(args)
-       val result = when (operation) {
-           "multiplica" -> multiplica(num1, num2)
-           "divide" -> divide(num1, num2)
-           else -> throw IllegalArgumentException("Operación no soportada")
-       }
-       showResult(operation, result)
-   }
+fun main(args: Array) {
+    val (operation, num1, num2) = parseArguments(args)
+    val result = when (operation) {
+        "multiplica" -> multiplica(num1, num2)
+        else -> throw IllegalArgumentException("Operación no soportada")
+    }
+    showResult(operation, result)
+}
 
 fun parseArguments(args: Array): Triple {
     if (args.size != 3) {
@@ -28,6 +27,10 @@ fun divide(num1: Int, num2: Int): Int {
 
 fun multiplica(num1: Int, num2: Int): Int {
     return num1 * num2
+}
+
+fun suma(num1: Int, num2: Int): Int {
+    return num1 + num2
 }
 
 fun showResult(operation: String, result: Int) {
